@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="./css/style.css" type="text/css" rel="stylesheet">
+    <title>Javascript Objects and JSON | Zipcode Wilmington</title>
+</head>
+<body>
+    <header class="main-header group">
+        <div class="title"><h1>Zipcode Wilmington<br>Javascript Lab - Fall 2015</h1></div>
+        <div class="lesson-link"><img src="./images/logos/js_logo.png" alt="Javascript"/></div>
+        <div class="zip-link"><img src="./images/logos/zip_logo.jpg" alt="Zipcode Wilmington"/></div>
+    </header>
+
+    <article>
+	    <h1>Instructions</h1>
+        <ol>
+            <li>Create a dog class that has the following:
+                <ul>
+                    <li>Properties
+                        <ul>
+                            <li>id</li>
+                            <li>name</li>
+                            <li>gender</li>
+                            <li>breed(s)</li>
+                            <li>age (human years)</li>
+                        </ul>
+                    </li>
+                    <li>Methods
+                        <ul>
+                            <li>speak - returns a string of the dogs name</li>
+                            <li>dogYears - return age in dog years</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Write a program that instantiates and initializes the properties through constructor arguments. Then call both methods and write result to the web page (index.html).</li>
+            <li>Concurrently create a JSON that holds the values for 3 dogs objects</li>
+        </ol>
+
+		<p>Use <code>document.getElementById('dog-name').innerHTML = <i>your_output</i>;</code> to write the dogs name to the page.</p>
+        <p>Use <code>document.getElementById('dog-years').innerHTML = <i>your_output</i>;</code> to write the dogs age in dog years to the page.</p>
+	</article>
+
+    <section>
+    	<h1>Dog Speak</h1>
+    	<div id="dog-name" class="result"></div>
+
+        <h1>Dog Age</h1>
+        <div id="dog-years" class="result"></div>
+    </section>
+</body>
+</html>
