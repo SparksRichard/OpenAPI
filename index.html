@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="./css/style.css" type="text/css" rel="stylesheet">
-    <title>Javascript Objects and JSON | Zipcode Wilmington</title>
+    <title>Import Local JSON Data | Zipcode Wilmington</title>
 </head>
 <body>
     <header class="main-header group">
@@ -14,40 +14,32 @@
 
     <article>
 	    <h1>Instructions</h1>
-        <ol>
-            <li>Create a dog class that has the following:
-                <ul>
-                    <li>Properties
-                        <ul>
-                            <li>id</li>
-                            <li>name</li>
-                            <li>gender</li>
-                            <li>breed(s)</li>
-                            <li>age (human years)</li>
-                        </ul>
-                    </li>
-                    <li>Methods
-                        <ul>
-                            <li>speak - returns a string of the dogs name</li>
-                            <li>dogYears - return age in dog years</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>Write a program that instantiates and initializes the properties through constructor arguments. Then call both methods and write result to the web page (index.html).</li>
-            <li>Concurrently create a JSON that holds the values for 3 dogs objects</li>
-        </ol>
+        <p>The file dataset.js hold json data that contains movie reviews from The New York Times.</p>
 
-		<p>Use <code>document.getElementById('dog-name').innerHTML = <i>your_output</i>;</code> to write the dogs name to the page.</p>
-        <p>Use <code>document.getElementById('dog-years').innerHTML = <i>your_output</i>;</code> to write the dogs age in dog years to the page.</p>
+        <p>Add the property <i>star_rating</i> to each movie and assign it a random rating between the values 1-5.</p>
+
+        <p>Write the following info for each movie to the webpage:
+            <ul>
+                <li>display_title</li>
+                <li>opening_data</li>
+                <li>mpaa_rating</li>
+                <li>star_rating</li>
+            </ul>
+        </p>
+
+		<p>Use <code>document.getElementById('result').innerHTML += <i>your_output</i>;</code> to write the movie's info to the page.</p>
+        <p>Append <code>"&ltbr&gt"</code> to output code to create a new line</p>
 	</article>
 
     <section>
-    	<h1>Dog Speak</h1>
-    	<div id="dog-name" class="result"></div>
+    	<h1>Movie Information</h1>
+    	<div id="result">
+            <ul id="movie-info">
 
-        <h1>Dog Age</h1>
-        <div id="dog-years" class="result"></div>
+            </ul>
+
+        </div>
+
     </section>
 </body>
 </html>
