@@ -1,5 +1,10 @@
 
-
+var redditApp = new Object();
+redditApp.linkManager = [];
+var request = new XMLHttpRequest();
+var parsedRequest;
+var comments = "";
+var titleLink;
 
 function Link(author, num_comments, over_18, permalink, score, subreddit, thumbnail, title, url){
 	this.author = author;
@@ -12,9 +17,6 @@ function Link(author, num_comments, over_18, permalink, score, subreddit, thumbn
 	this.title = title;
 	this.url = url;
 }
-
-var redditApp = new Object();
-redditApp.linkManager = [];
 
 redditApp.buildObjects = function(){
 	var redditData = parsedRequest.data.children
@@ -42,17 +44,18 @@ redditApp.writeToScreen = function(){
 	var title = "";
 	for (x in this.linkManager){
 		
-		
-		title += "<ul style=\"list-style-type:none\"><li><img src="+this.linkManager[x].thumbnail+" alt=\"gah?\" height=\"100\" width=\"100\">"+"</li>";
+		comments = "http://www.reddit.com"+redditApp.linkManager[x].permalink;
 
-		title += "<li><a href = "+this.linkManager[x].url;+">"+this.linkManager[x].title+"</a></li>";
+		title += "<ul style=\"list-style-type:none\"><li><img src="+this.linkManager[x].thumbnail+" alt=\"gah?\" height=\"100\" width=\"100\"></li>";
+
+		title += "<li><a href = "+this.linkManager[x].url+">"+this.linkManager[x].title+"</a></li>";
 
 		title += "<li>"+this.linkManager[x].score+", ";
 		title += this.linkManager[x].subreddit+", ";
 		title += this.linkManager[x].author+",";
 		title += this.linkManager[x].over_18+"</li>";
 
-		title += "<li><a href = "+this.linkManager[x].num_comments+">"+this.linkManager[x].permalink+"</a></li><ul style=\"list-style-type:none\">";
+		title += "<li><a href = "+comments+">Click here to view "+this.linkManager[x].num_comments+" comments</a></li></ul>";
 		
 
 
@@ -74,15 +77,15 @@ redditApp.writeToScreen = function(){
 
 
 
-var request = new XMLHttpRequest();
-var parsedRequest;
+
 request.open('GET', 'http://www.reddit.com/.json');
 request.onreadystatechange = function(){
 	if((request.status==200) && (request.readyState==4)){
 		parsedRequest = JSON.parse(request.responseText);
 		redditApp.buildObjects();
 		redditApp.writeToScreen();
-		console.log(redditApp.linkManager);
+		console.log(comments);
+		console.log(redditApp.linkManager[1].url)
 	}
 }
 request.send();
