@@ -122,11 +122,24 @@ ul li {margin-left: 20px; margin-bottom: 0;}
 /* ===================================== BODY STYLE ========================================= */
 
 
-
+section {
+    background-color:#ddd;
+    padding: 15px;
+}
+article{
+    border-bottom: 1px solid #999;
+}
+#title ul{
+    border-bottom: 1px solid #999;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
 .picture {
     float: left;
 }
-
+.picture img {
+    border: 1px solid #333;
+}
 .titleLink{
     float: left;
 }
