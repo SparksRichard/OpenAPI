@@ -119,3 +119,23 @@ ul li {margin-left: 20px; margin-bottom: 0;}
 
 
 
+/* ===================================== BODY STYLE ========================================= */
+
+
+
+.picture {
+    float: left;
+}
+
+.titleLink{
+    float: left;
+}
+
+.infoList {
+    float: left;
+}
+
+.group a{
+    color:blue;
+}
+
