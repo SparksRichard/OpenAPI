@@ -29,6 +29,7 @@ redditApp.buildObjects = function(){
 			redditData[x].data.permalink,
 			redditData[x].data.score,
 			redditData[x].data.subreddit,
+			//if = "nsfw" or ""
 			redditData[x].data.thumbnail,
 			redditData[x].data.title,
 			redditData[x].data.url
@@ -37,25 +38,54 @@ redditApp.buildObjects = function(){
 	}
 }
 
+var pic = "";
+
+redditApp.updateThumbnail = function(x){
+
+	
+		
+		if(this.linkManager[x].thumbnail == "nsfw"){
+			pic = "http://i.imgur.com/UHzw6.png";
+		}
+		else if(this.linkManager[x].thumbnail == ""){
+			pic = "https://lh3.googleusercontent.com/-I7VHiw7eMcM/AAAAAAAAAAI/AAAAAAAAAAA/v9t8aXluKrs/photo.jpg"}
+		else if(this.linkManager[x].thumbnail == "self"){
+			pic = "http://i.imgur.com/Obq6XD6.png";
+		}
+		else if(this.linkManager[x].thumbnail == "default"){
+			pic = "http://i.stack.imgur.com/kL2G9.png";
+		}
+		else{
+			pic = this.linkManager[x].thumbnail;
+		
+	}
+}
 redditApp.writeToScreen = function(){
 	var comments = "";
 	var info = "";
-	var pic = "";
 	var title = "";
 	for (x in this.linkManager){
 		
 		comments = "http://www.reddit.com"+redditApp.linkManager[x].permalink;
 
-		title += "<ul style=\"list-style-type:none\"><li><img src="+this.linkManager[x].thumbnail+" alt=\"gah?\" height=\"100\" width=\"100\"></li>";
+		redditApp.updateThumbnail(x);
+		//placeholder imgs for nothing and nsfw
+		// add self and default categories
+		
+		title += "<article class = \"group\"><a class = \"picture\" href = "+this.linkManager[x].url+ "><img class = \"thumbnail\" src = "+pic+"alt = \"broken!!\" height = \"100\" width = \"100\"></a>";
+		
+		//add NSFW if()
 
-		title += "<li><a href = "+this.linkManager[x].url+">"+this.linkManager[x].title+"</a></li>";
+		title += "<ul class = \"titleLink\" style = \"list-style-type:none\"><li><a href = "+this.linkManager[x].url+">"+this.linkManager[x].title+"</a></li><li><a href = "+comments+">Click here to view "+this.linkManager[x].num_comments+" comments.</a></li><li class=\"notSafe\">NSFW!</li></ul>";
 
-		title += "<li>"+this.linkManager[x].score+", ";
-		title += this.linkManager[x].subreddit+", ";
-		title += this.linkManager[x].author+",";
-		title += this.linkManager[x].over_18+"</li>";
+			//<li><a href = "+this.linkManager[x].url+">"+this.linkManager[x].title+"</a></li>
+		title += "<ul class = \"infoList\">"
+		title += "<li>Points:"+this.linkManager[x].score+"</li> ";
+		title += "<li>Sub:"+this.linkManager[x].subreddit+"</li> ";
+		title += "<li>By:"+this.linkManager[x].author+"</li></ul></article>";
+		
 
-		title += "<li><a href = "+comments+">Click here to view "+this.linkManager[x].num_comments+" comments</a></li></ul>";
+		
 		
 
 
@@ -84,8 +114,7 @@ request.onreadystatechange = function(){
 		parsedRequest = JSON.parse(request.responseText);
 		redditApp.buildObjects();
 		redditApp.writeToScreen();
-		console.log(comments);
-		console.log(redditApp.linkManager[1].url)
+		console.log(redditApp.linkManager);
 	}
 }
 request.send();

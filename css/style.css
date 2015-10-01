@@ -13,17 +13,9 @@
 body { font: 14px/1.4 arial, sans-serif; background-color: #F5F5F5;);}
 
 article, aside, figure, footer, header, nav, section { display: block; }
-a:link, a:visited {
-    text-decoration: none;
 
-    color: inherit;
-}
 
-a:hover, a:active {
-    text-decoration: none;
 
-    color: inherit;
-}
 
 .group:before,
 .group:after {
@@ -123,6 +115,7 @@ ul li {margin-left: 20px; margin-bottom: 0;}
 
 
 section {
+    font-size:14px ;
     background-color:#ddd;
     padding: 15px;
 }
@@ -134,21 +127,36 @@ article{
     padding-bottom: 15px;
     padding-top: 15px;
 }
-.picture {
-    float: left;
-}
+
 .picture img {
-    border: 1px solid #333;
+    border: 1px solid #999;
+    
 }
+
+.picture{
+    float: left
+}
+
+
+.titleLink li a{
+
+    
+}
+.notSafe{
+    color:red;
+}
+
+.titleLink {
+
+}
+
 .titleLink{
     float: left;
 }
 
-.infoList {
-    float: left;
-}
 
-.group a{
-    color:blue;
+.infoList {
+    float: right;
+
 }
 
