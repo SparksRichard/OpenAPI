@@ -40,7 +40,7 @@ article, aside, figure, footer, header, nav, section { display: block; }
     width: 100%;
     height: 150px;
     
-    background-color: #144e64;}
+    background-color: #003;}
 
 .main-header .title {
     float: left;
@@ -115,20 +115,21 @@ ul li {margin-left: 20px; margin-bottom: 0;}
 
 
 section {
-    font-size:14px ;
-    background-color:#ddd;
+ 
+    background-color:#066;
     padding: 15px;
 }
 article{
     border-bottom: 1px solid #999;
 }
 #title ul{
-    border-bottom: 1px solid #999;
+    
     padding-bottom: 15px;
     padding-top: 15px;
 }
 
 .picture img {
+
     border: 1px solid #999;
     
 }
@@ -146,17 +147,29 @@ article{
     color:red;
 }
 
-.titleLink {
-
+.title2 a{
+    padding-bottom: 15px;
+    border-bottom: 1px solid #999;
 }
 
 .titleLink{
     float: left;
+    width:65%;
+  
 }
-
+.commentFormat{
+    color:deepskyblue;
+}
+.titleFormat{
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 19px;
+}
 
 .infoList {
     float: right;
-
+    width: 20%;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #999;
 }
 
